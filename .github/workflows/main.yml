@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-    # Переключаем среду сборки на Windows
     runs-on: windows-latest
 
     steps:
@@ -23,5 +22,6 @@ jobs:
         cache: gradle
 
     - name: Build with Gradle
-      # Запуск bat-скрипта Windows. Если проект в подпапке, замените на: папка\gradlew.bat build
-      run: gradlew.bat build
+      # Если ваш проект лежит в подпапке, раскомментируйте строчку ниже и впишите имя папки:
+      # working-directory: ИМЯ_ВАШЕЙ_ПАПКИ
+      run: .\gradlew.bat build
